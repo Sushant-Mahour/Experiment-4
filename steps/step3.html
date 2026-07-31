@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determination of Shrinkage Temperature</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="simulation-container">
+        <h1 class="title">Virtual Experiment: Shrinkage Temperature</h1>
+        <p class="instruction-text">
+            <span class="step-badge">Step 3</span>
+            Setup Beaker: Insert thermometer and specimen into the beaker.
+        </p>
+        <div class="sim-area" id="step3">
+            <div class="statement" style="top: 20px; left: 20px; z-index: 100;">
+               
+            </div>
+
+            <img id="staticImg3" src="../assets/step3_p1_first.png" class="media-layer">
+            <img id="gif3" class="media-layer" style="display: none;">
+            
+            <div id="interactionLayer3a">
+                <div class="transbox" id="transbox3a" title="Click to Move Beaker!"></div>
+                <img src="../assets/arrow_down.gif" class="arrow" id="arrow3a">
+            </div>
+
+            <div id="interactionLayer3b" style="display: none;">
+                <div class="transbox" id="transbox3b" title="Click to Fill Water!"></div>
+                <img src="../assets/arrow_down.gif" class="arrow" id="arrow3b">
+            </div>
+
+            <div id="interactionLayer3c" style="display: none;">
+                <div class="transbox" id="transbox3c" title="Click to Place Stir Bar!"></div>
+                <img src="../assets/arrow_down.gif" class="arrow" id="arrow3c">
+            </div>
+        </div>
+        <div class="toolbar">
+            <button class="btn-nav btn-prev" id="prevToStep2">◀ Back</button>
+            <div class="progress-bar" aria-hidden="true"><div class="progress-fill" style="width:44%"></div></div>
+            <button class="btn-nav btn-next" id="nextToStep4">Next ▶</button>
+        </div>
+    </div>
+    <script src="step3.js"></script>
+</body>
+</html>
+
+

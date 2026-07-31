@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determination of Shrinkage Temperature</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="simulation-container">
+        <h1 class="title">Virtual Experiment: Shrinkage Temperature</h1>
+        <p class="instruction-text">
+            <span class="step-badge">Step 4</span>
+            Add Water: Add distilled water to the beaker.
+        </p>
+        <div class="sim-area" id="step4">
+            <div class="statement" style="top: 20px; left: 20px; z-index: 100;">
+                <h3 class="step-title">Step 4: Apparatus Setup</h3>
+                <p id="step4Text">Place the stir bar inside the beaker.</p>
+            </div>
+
+            <video id="vid4" class="media-layer" muted playsinline preload="auto">
+                <source src="../assets/step4.mp4" type="video/mp4">
+            </video>
+            
+            <div id="interactionLayer4a">
+                <div class="transbox" id="transbox4a" title="Click to Move Apparatus!"></div>
+                <img src="../assets/arrow_down.gif" class="arrow" id="arrow4a">
+            </div>
+
+            <div id="interactionLayer4b" style="display: none;">
+                <div class="transbox" id="transbox4b" title="Click to Insert Thermometer!"></div>
+                <img src="../assets/arrow_down.gif" class="arrow" id="arrow4b">
+            </div>
+
+            <div id="interactionLayer4c" style="display: none;">
+                <div class="transbox" id="transbox4c" title="Click to Turn On Stirrer!"></div>
+                <img src="../assets/arrow_down.gif" class="arrow" id="arrow4c">
+            </div>
+        </div>
+        <div class="toolbar">
+            <button class="btn-nav btn-prev" id="prevToStep3">◀ Back</button>
+            <div class="progress-bar" aria-hidden="true"><div class="progress-fill" style="width:55%"></div></div>
+            <button class="btn-nav btn-next" id="nextToStep5">Next ▶</button>
+        </div>
+    </div>
+    <script src="step4.js"></script>
+</body>
+</html>
+
+

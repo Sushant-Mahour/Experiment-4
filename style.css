@@ -1,0 +1,499 @@
+
+:root {
+  --primary: #1475e4;
+  --primary-dark: #0a5eb8;
+  --primary-light: #4d9ef5;
+  --title-bg: rgb(0, 100, 200);
+  --accent: #003080;
+  --bg-body: #c8d8e8;
+  --bg-panel: rgba(220, 229, 236, 255);
+  --text-color: #222;
+  --text-muted: #666;
+  --badge-bg: #e8f0fe;
+  --badge-border: #4285f4;
+  --transition-fast: 0.2s;
+  --transition-med: 0.45s;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --radius: 6px;
+  --font: 'Open Sans', Arial, Helvetica, sans-serif;
+  --font-title: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+/* ── Reset & Base ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-body);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ── Mock-up Container (800 x 600) ──────────────────────── */
+.simulation-container {
+  background-color: var(--bg-panel);
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Title Bar ──────────────────────────────────────────── */
+.title {
+  margin: 0;
+  padding: 10px 10px;
+  letter-spacing: 0.05em;
+  background-color: var(--title-bg);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+/* ── Step Badge ─────────────────────────────────────────── */
+.step-badge {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--badge-bg);
+  border: 1.5px solid var(--badge-border);
+  color: var(--accent);
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* ── Instruction text bar ───────────────────────────────── */
+.instruction-text {
+  font-size: 13px;
+  color: var(--text-color);
+  background: #e4edf7;
+  border-bottom: 1px solid #b8cfe0;
+  padding: 6px 14px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* ── Image Area (click zone) ─────────────────────────────── */
+.img-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #dce5ec;
+  outline: none;
+}
+
+.img-area:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: -3px;
+}
+
+/* All slide images stack absolutely */
+.img-area img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.img-area img.active {
+  opacity: 1;
+}
+
+/* ── Simulation canvas area (replaces img-area for sim step) */
+.sim-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #dce5ec;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ── Step button overlays */
+.step-btn-overlay {
+  position: absolute;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  border: none;
+  z-index: 10;
+  user-select: none;
+}
+
+.step-btn-overlay:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ── Click hint overlay ─────────────────────────────────── */
+.click-hint {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 14px;
+  pointer-events: none;
+  transition: opacity var(--transition-med);
+  white-space: nowrap;
+  z-index: 20;
+}
+
+.click-hint.hidden {
+  opacity: 0;
+}
+
+/* ── Bottom toolbar ─────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: #d0dce8;
+  border-top: 1px solid #b0c4d8;
+  flex-shrink: 0;
+  gap: 8px;
+  height: 44px;
+}
+
+/* ── Progress bar ─────────────────────────────────────────── */
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #b0c4d8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  transition: width var(--transition-med);
+  width: 0%;
+}
+
+/* ── Slide counter ──────────────────────────────────────── */
+.slide-counter {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* ── Navigation buttons ─────────────────────────────────── */
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 16px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-prev {
+  background: #fff;
+  color: var(--accent);
+  border: 1.5px solid var(--primary);
+}
+.btn-prev:hover:not(:disabled) {
+  background: var(--badge-bg);
+  transform: translateX(-2px);
+}
+
+.btn-next {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-next:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(20, 117, 228, 0.35);
+}
+
+.btn-nav:disabled,
+.btn-nav[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Landing page ────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  border-radius: 0 0 6px 6px;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+.apparatus-img {
+  display: block;
+  max-width: 100%;
+  height: 350px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.info-panel {
+  background: #e4edf7;
+  border-top: 1px solid #b8cfe0;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.info-text-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.info-panel h2 {
+  font-size: 15px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.info-panel p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.op-spec {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  color: #1e293b;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  gap: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.op-spec svg {
+  color: var(--primary);
+}
+
+.standards-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.std-badge {
+  background: var(--badge-bg);
+  border: 1.5px solid var(--badge-border);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.btn-start {
+  display: inline-block;
+  width: 180px;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: var(--radius);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-start:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 4px 14px rgba(20, 117, 228, 0.4);
+}
+
+/* ── Fade-in animation ───────────────────────────────────── */
+@keyframes fadeInSlide {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.simulation-container {
+  animation: fadeInSlide 0.35s ease both;
+}
+
+/* ── Responsive fallback ─────────────────────────────────── */
+@media (max-width: 840px) {
+  body { padding: 10px; }
+  .simulation-container {
+    width: 100%;
+    height: auto;
+    min-height: 520px;
+  }
+  .apparatus-img { height: 260px; }
+}
+
+/* -- Landing Hero Area ------------------------------------- */
+.landing-hero {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: #ffffff;
+  overflow: hidden;
+  border-bottom: 1px solid #b8cfe0;
+}
+
+#landingCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.standards-corner-box {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 12px;
+  border: 1px solid #b0c4d8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+}
+
+.standards-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+  border-bottom: 1px solid #d0dce8;
+  padding-bottom: 4px;
+}
+
+
+/* --- Experiment 3 Specific Fixes --- */
+.media-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.sim-area {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Interaction transboxes and arrows */
+.transbox {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    background: transparent;
+    border: none;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 5;
+}
+
+/* Step 1 Specific Coords */
+#transbox1 { top: 215px; left: 591px; width: 79px; height: 35px; }
+#arrow1 { top: 200px; left: 601px; width: 60px; }
+#nextToStep1b { visibility: hidden; }
+
+/* Step 1b Specific Coords */
+#transbox1b { top: 300px; left: 950px; width: 80px; height: 40px; }
+#arrow1b { top: 260px; left: 960px; width: 60px; }
+#nextToStep2 { visibility: hidden; }
+
+/* Step 2 Specific Coords */
+#transbox2 { top: 330px; left: 440px; width: 82px; height: 35px; }
+#arrow2 { top: 290px; left: 463px; width: 60px; }
+#nextToStep3 { visibility: hidden; }
+
+/* Step 3 Specific Coords */
+#transbox3a { top: 70px; left: 870px; width: 145px; height: 165px; }
+#arrow3a { top: 38px; left: 890px; width: 60px; }
+#transbox3b { top: 315px; left: 965px; width: 115px; height: 150px; }
+#arrow3b { top: 200px; left: 990px; width: 60px; }
+#transbox3c { top: 100px; left: 565px; width: 100px; height: 100px; }
+#arrow3c { top: 75px; left: 592px; width: 60px; }
+#nextToStep4 { visibility: hidden; }
+
+/* Step 4 Specific Coords */
+#transbox4a { top: 50px; left: 1020px; width: 150px; height: 150px; }
+#arrow4a { top: 2px; left: 1052px; width: 60px; }
+#transbox4b { top: 170px; left: 820px; width: 250px; height: 80px; }
+#arrow4b { top: 140px; left: 910px; width: 60px; }
+#transbox4c { top: 420px; left: 600px; width: 45px; height: 60px; }
+#arrow4c { top: 400px; left: 595px; width: 60px; }
+#nextToStep5 { visibility: hidden; }

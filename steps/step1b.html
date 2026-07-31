@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determination of Shrinkage Temperature</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="simulation-container">
+        <h1 class="title">Virtual Experiment: Shrinkage Temperature</h1>
+        <p class="instruction-text">
+            <span class="step-badge">Step 1b</span>
+            Weigh Specimen: Weigh both specimens using the weighing balance.
+        </p>
+        <div class="sim-area" id="step1b">
+            <img id="staticImg1b" src="../assets/slide_1b_first.png" class="media-layer">
+            <img id="gif1b" class="media-layer" style="display: none;">
+
+            <div id="interactionLayer1b">
+                <div class="transbox" id="transbox1b" title="Click to Punch!"></div>
+                <img src="../assets/arrow_down.gif" class="arrow" id="arrow1b">
+            </div>
+        </div>
+        <div class="toolbar">
+            <button class="btn-nav btn-prev" id="prevToStep1">◀ Back</button>
+            <div class="progress-bar" aria-hidden="true"><div class="progress-fill" style="width:22%"></div></div>
+            <button class="btn-nav btn-next" id="nextToStep2">Next ▶</button>
+        </div>
+    </div>
+    <script src="step1b.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determination of Shrinkage Temperature</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="simulation-container">
+        <h1 class="title">Virtual Experiment: Shrinkage Temperature</h1>
+        <p class="instruction-text">
+            <span class="step-badge">Step 5</span>
+            Controlled Heating + Stirring: Switch on the magnetic stirrer along with the heater.
+        </p>
+        <div class="sim-area" id="step5">
+            <img id="staticImg5" src="../assets/step5_start.png" class="media-layer">
+            <img id="gif5" class="media-layer" style="display: none;">
+            
+            <div id="interactionLayer5Speed">
+                <div class="transbox" id="transbox5Speed" title="Click Speed Knob!" style="top: 40%; left: 30%; width: 50px; height: 50px; position: absolute; border: 2px solid blue; background: rgba(0,0,255,0.3);"></div>
+            </div>
+
+            <div id="interactionLayer5Heat" style="display: none;">
+                <div class="transbox" id="transbox5Heat" title="Click Heat Knob!" style="top: 40%; left: 60%; width: 50px; height: 50px; position: absolute; border: 2px solid blue; background: rgba(0,0,255,0.3);"></div>
+            </div>
+        </div>
+        <div class="toolbar">
+            <button class="btn-nav btn-prev" id="prevToStep4">◀ Back</button>
+            <div class="progress-bar" aria-hidden="true"><div class="progress-fill" style="width:66%"></div></div>
+            <button class="btn-nav btn-next" id="nextToStep6" style="visibility: hidden;">Next ▶</button>
+        </div>
+    </div>
+    <script src="step5.js"></script>
+</body>
+</html>
+
+
+
