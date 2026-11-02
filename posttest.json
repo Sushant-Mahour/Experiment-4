@@ -1,0 +1,116 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "During a shrinkage test per ISO 3380, an operator increases the heating rate to 8.0 °C/min instead of the mandated 2.0 ± 0.2 °C/min. How will this procedural error affect the recorded shrinkage temperature (Ts)?",
+      "answers": {
+        "a": "The recorded Ts will be artificially elevated due to thermal lag between the rapidly heating water bath and the interior core of the leather strip",
+        "b": "The recorded Ts will be significantly lower because collagen dissolves faster at higher heating rates",
+        "c": "There will be no effect because shrinkage temperature is a thermodynamic constant independent of heating kinetics",
+        "d": "The leather strip will expand by 200% instead of shrinking"
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "A vegetable-tanned leather specimen strip with an initial gauge length L₀ = 50.0 mm is subjected to the shrinkage test. After complete hydrothermal denaturation, the final contracted length Lf is measured as 36.5 mm. What is the percentage longitudinal shrinkage (%S)?",
+      "answers": {
+        "a": "13.5%",
+        "b": "27.0%",
+        "c": "36.5%",
+        "d": "73.0%"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why does ISO 3380 require testing duplicate specimen strips cut both parallel and perpendicular to the backbone (lines of toughness)?",
+      "answers": {
+        "a": "To verify that the weighing scale does not drift over time",
+        "b": "Because collagen fiber bundles exhibit natural directional anisotropy in alignment and density relative to the animal's spine, potentially causing directional variations in hydrothermal response",
+        "c": "To ensure that the dye coloring on both sides of the hide is identical",
+        "d": "Because one orientation measures apparent density while the other measures tensile modulus"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In a laboratory test, two duplicate strips of vegetable-tanned sole leather yield shrinkage temperatures of 82.5 °C (parallel to backbone) and 83.5 °C (perpendicular to backbone). What is the reported mean shrinkage temperature (Ts,mean)?",
+      "answers": {
+        "a": "82.0 °C",
+        "b": "83.0 °C",
+        "c": "84.0 °C",
+        "d": "85.0 °C"
+      },
+      "correctAnswer": "b",
+      "difficulty": "basic"
+    },
+    {
+      "question": "When testing a high-grade Chrome-Tanned Upper Leather (Wet Blue) sample in distilled water, the bath temperature reaches 100.0 °C (boiling point at standard atmospheric pressure) and the indicator pointer exhibits 0.0 mm deflection. What is the standard technical conclusion?",
+      "answers": {
+        "a": "The test has failed and the apparatus must be discarded",
+        "b": "The leather satisfies the hydrothermal boiling test criterion (Ts > 100.0 °C), indicating complete, stable chromium cross-linking",
+        "c": "The leather has zero degree of tannage and must be retanned",
+        "d": "The water used was contaminated with salt ions"
+      },
+      "correctAnswer": "b",
+      "difficulty": "basic"
+    },
+    {
+      "question": "Why cannot an open-bath distilled water apparatus be utilized to determine the exact numerical shrinkage temperature of wet blue leathers that shrink above 100 °C?",
+      "answers": {
+        "a": "Collagen becomes completely impermeable above 90 °C",
+        "b": "Water boils and vaporizes at 100.0 °C under atmospheric pressure, limiting open bath temperature unless a high-boiling medium (e.g. 75:25 glycerol:water) or a sealed pressurized hydrothermal cell is used",
+        "c": "The glass beaker will shatter at 101 °C",
+        "d": "Magnetic stir bars lose their magnetic dipole alignment above 95 °C"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "If a newly developed 'wet white' leather batch exhibits a shrinkage temperature of only 66.0 °C, what does this indicate regarding the tanning process?",
+      "answers": {
+        "a": "Excellent over-tannage with superior thermal stability",
+        "b": "Severe under-tannage or insufficient cross-linking density, barely exceeding that of untanned pelt (60–65 °C), making it unsuitable for shoe upper molding",
+        "c": "The presence of excessive chromium trichloride crystals",
+        "d": "Ideal tanning characteristics for military boot outsoles"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What exact visual/physical indicator defines the onset of hydrothermal shrinkage during observation of the graduated scale?",
+      "answers": {
+        "a": "The pointer rapidly oscillating back and forth randomly",
+        "b": "The first distinct, continuous, and steady displacement of the pointer indicating specimen shortening",
+        "c": "The appearance of small water bubbles on the glass wall",
+        "d": "The instant the water bath changes color from clear to brown"
+      },
+      "correctAnswer": "b",
+      "difficulty": "basic"
+    },
+    {
+      "question": "In footwear manufacturing, why is a high hydrothermal shrinkage temperature (Ts ≥ 100 °C) essential for shoe upper leathers?",
+      "answers": {
+        "a": "To allow the shoes to be cleaned with industrial bleach",
+        "b": "To withstand direct vulcanization, hot-melt adhesive curing, toe-puff molding, and hot iron ironing/finishing without grain puckering, curling, or thermal contraction",
+        "c": "To eliminate the requirement for lining materials inside shoes",
+        "d": "To increase the total electrical resistance of safety boots to 1000 MΩ"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "If an operator replaces the recommended 3.0 g counterweight with a 100.0 g weight, what error is introduced into the shrinkage temperature determination?",
+      "answers": {
+        "a": "The water bath will heat up twice as fast",
+        "b": "Excessive mechanical tensile stress will cause premature plastic creep and fiber elongation, distorting the genuine hydrothermal contraction threshold and potentially snapping the strip",
+        "c": "The true collagen denaturation temperature will increase by 50 °C",
+        "d": "Chromium ions will be forced back into the aqueous solution"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    }
+  ]
+}
+

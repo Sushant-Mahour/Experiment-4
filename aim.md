@@ -1,0 +1,2 @@
+To determine the hydrothermal shrinkage temperature ($T_s$) of leather specimens (Vegetable-Tanned Leather, Chrome-Tanned Leather, and Semi-Chrome Leather) by subjecting wet strip test specimens to uniform, controlled heating in an aqueous medium using a low-friction pulley and counterweight assembly to detect the onset of collagen triple-helix denaturation in accordance with ISO 3380:2015 (IUP 16) and SLTC SLC 406.
+

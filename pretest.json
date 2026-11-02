@@ -1,0 +1,116 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which international standard specifies the determination of shrinkage temperature of leather up to 100 °C, and what physical phenomenon does it measure?",
+      "answers": {
+        "a": "ISO 5402; mechanical flex cracking under cyclic bending stress",
+        "b": "ISO 3380 (IUP 16); hydrothermal denaturation and longitudinal contraction of collagen fibers under controlled aqueous heating",
+        "c": "ISO 2420; apparent bulk density and porosity of tanned hides",
+        "d": "ISO 11640; color transfer fastness to reciprocal dry and wet crocking"
+      },
+      "correctAnswer": "b",
+      "difficulty": "basic"
+    },
+    {
+      "question": "At the macromolecular level, what structural transition in collagen triggers the macroscopic hydrothermal shrinkage of leather?",
+      "answers": {
+        "a": "Cleavage of primary covalent peptide bonds along the polypeptide backbone into single amino acids",
+        "b": "Cooperative rupture of interchain hydrogen bonds causing the rigid triple helix of tropocollagen to collapse into a random coil gelatin conformation",
+        "c": "Sublimation of crystalline water clusters into steam cavities within the grain pores",
+        "d": "Cross-linking of lipid fatliquors with basic chromium salts"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the typical hydrothermal shrinkage temperature (Ts) range of raw, untanned collagen or pickled pelt in water?",
+      "answers": {
+        "a": "35.0 °C to 42.0 °C",
+        "b": "60.0 °C to 65.0 °C",
+        "c": "80.0 °C to 85.0 °C",
+        "d": "Above 100.0 °C"
+      },
+      "correctAnswer": "b",
+      "difficulty": "basic"
+    },
+    {
+      "question": "Why does standard chrome-tanned leather (Wet Blue) exhibit a hydrothermal shrinkage temperature typically exceeding 100 °C?",
+      "answers": {
+        "a": "Chromium ions form an impervious glassy coating on the exterior surface",
+        "b": "Polynuclear Chromium(III) complexes form coordinate covalent cross-links with carboxyl groups of aspartic and glutamic acid residues via olation and oxolation bridges",
+        "c": "Chromium salts eliminate all water molecules, converting collagen into crystalline graphite",
+        "d": "Chromium reduces the molecular weight of collagen so it can no longer coil"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In accordance with ISO 3380, what are the prescribed dimensions for the test specimen strip cut from the conditioned leather?",
+      "answers": {
+        "a": "150.0 mm length × 25.0 mm width",
+        "b": "70.0 mm diameter circular disc",
+        "c": "50.0 ± 2.0 mm length × 2.0 to 3.0 mm width",
+        "d": "20.0 mm length × 20.0 mm width square"
+      },
+      "correctAnswer": "c",
+      "difficulty": "basic"
+    },
+    {
+      "question": "What standardized heating rate (dT/dt) is strictly specified in ISO 3380 during the critical thermal approach to the shrinkage temperature?",
+      "answers": {
+        "a": "0.5 ± 0.1 °C/min",
+        "b": "2.0 ± 0.2 °C/min",
+        "c": "5.0 ± 0.5 °C/min",
+        "d": "10.0 ± 1.0 °C/min"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why is continuous, gentle magnetic stirring mandatory throughout the shrinkage temperature determination?",
+      "answers": {
+        "a": "To dissolve the tanning chemicals out of the specimen into the bath",
+        "b": "To eliminate thermal stratification and boundary-layer temperature gradients around the specimen and thermometer bulb",
+        "c": "To mechanically stretch the leather fibers until they reach yield point",
+        "d": "To introduce dissolved oxygen to accelerate collagen thermal oxidation"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the primary function of the lightweight counterweight (approx. 3.0 g / 0.03 N) suspended over the low-friction pulley?",
+      "answers": {
+        "a": "To calibrate the electrical conductivity of the immersion fluid",
+        "b": "To maintain slight positive tension keeping the wet strip taut without inducing mechanical creep or elongation",
+        "c": "To measure the Archimedean buoyant force of the leather",
+        "d": "To tear the specimen once the collagen bonds begin to soften"
+      },
+      "correctAnswer": "b",
+      "difficulty": "basic"
+    },
+    {
+      "question": "Which repeating tripeptide amino acid sequence forms the primary structural motif of collagen alpha-chains?",
+      "answers": {
+        "a": "(Gly-X-Y)n, where X is commonly proline and Y is commonly hydroxyproline",
+        "b": "(Ala-Leu-Val)n, where Valine occupies every second residue",
+        "c": "(Cys-Met-Lys)n, stabilized by continuous disulfide bridges",
+        "d": "(Glu-Asp-His)n, forming ionic salt linkages"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Why does vegetable-tanned leather typically display a shrinkage temperature between 75 °C and 85 °C, lower than that of chrome-tanned leather?",
+      "answers": {
+        "a": "Vegetable tannins destroy the polypeptide chains rather than preserving them",
+        "b": "Vegetable polyphenolic tannins primarily stabilize collagen through multi-point hydrogen bonds and hydrophobic interactions rather than thermally robust covalent coordination bonds",
+        "c": "Vegetable tannins are volatile and evaporate completely at 70 °C",
+        "d": "Vegetable tanning only reacts with the epidermis layer of the hide"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    }
+  ]
+}
+
